@@ -122,7 +122,7 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                   </div>
                   
                   <Button 
-                  disabled = {pathname === "/listing" }
+                  disabled = {pathname === "/listing" || pathname === "/extremebidding" }
                     className={`w-full ${
                       plan.popular
                         ? 'bg-green-500 hover:bg-green-600 text-white'
