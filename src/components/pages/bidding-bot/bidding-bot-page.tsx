@@ -146,10 +146,15 @@ export function BiddingBotPage() {
               </p>
 
               <div className="flex flex-wrap gap-4 items-center">
+                <a href='#pricing'>
+
                 <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white">
                   Get Started
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
+
+                </a>
+
                 <Button size="lg" variant="outline" className="border-emerald-500/20 hover:bg-emerald-500/10">
                   Watch Demo
                 </Button>
