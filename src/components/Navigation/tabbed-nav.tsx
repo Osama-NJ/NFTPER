@@ -12,7 +12,6 @@ import { AiOutlineDiscord } from 'react-icons/ai'
 import { Logo } from "@/components/Header/Logo"
 
 export default function TabbedNav() {
-  const [activeTab, setActiveTab] = useState<'bidding' | 'listing' | 'extreme'>('bidding')
   const pathname = usePathname();  // Gets the current path
 
   if (pathname === "/") return null;  // Don't render the nav if on home page
@@ -30,34 +29,24 @@ export default function TabbedNav() {
       <Link className="text-white hover:bg-zinc-800 p-1 rounded-md transition-colors ml-2" href={'/'}>
           <ArrowLeft className="h-5 w-5" />
         </Link>
-
         <Link
-          onClick={() => setActiveTab('bidding')}
           className={cn(
             "px-3 py-1 rounded-md text-sm font-medium relative transition-all duration-200 ease-in-out",
-            activeTab === 'bidding'
-              ? "bg-emerald-500 text-white scale-105"
-              : "text-zinc-400 hover:text-white hover:bg-zinc-800"
+            pathname === '/bidding' ? "bg-emerald-500 text-white scale-105" : "text-zinc-400 hover:text-white hover:bg-zinc-800"
           )} href={'/bidding'}>
           Bidding
         </Link>
         <Link
-          onClick={() => setActiveTab('listing')}
           className={cn(
             "px-3 py-1 rounded-md text-sm font-medium relative transition-all duration-200 ease-in-out",
-            activeTab === 'listing'
-              ? "bg-emerald-500 text-white scale-105"
-              : "text-zinc-400 hover:text-white "
+            pathname === '/listing' ? "bg-emerald-500 text-white scale-105" : "text-zinc-400 hover:text-white"
           )} href={"/listing"}>
           Listing
         </Link>
         <Link
-          onClick={() => setActiveTab('extreme')}
           className={cn(
             "px-3 py-1 rounded-md text-sm font-medium relative transition-all duration-200 ease-in-out",
-            activeTab === 'extreme'
-              ? "bg-emerald-500 text-white scale-105"
-              : "text-zinc-400 hover:text-white "
+            pathname === '/extremebidding' ? "bg-emerald-500 text-white scale-105" : "text-zinc-400 hover:text-white"
           )} href={"/extremebidding"}>
           Extreme
         </Link>
