@@ -15,7 +15,7 @@ interface FAQProps {
 
 export function FAQ({ title, faqs, className = '' }: FAQProps) {
   return (
-    <section className={`py-20 px-4 ${className}`}>
+    <section className={`py-20 px-4 ${className}`} id="faq">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold mb-8 text-center text-white">{title}</h2>
         <h3 className="  text-center text-4xl font-bold mb-4 text-white">Frequently Asked Questions</h3>

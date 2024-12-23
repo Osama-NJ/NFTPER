@@ -3,10 +3,10 @@ import { Layers } from 'lucide-react';
 
 export function Logo() {
   return (
-    <div className="flex justify-center items-center mb-6">
-      <Layers className="w-12 h-12 text-green-500 mr-4" />
-      <h1 className="text-4xl font-bold">
-        NFT<span className="text-green-500">PER</span>
+    <div className="flex items-center mb-1.5">
+      <Layers className="w-6 h-6 text-green-500 mr-2" />
+      <h1 className="text-2xl font-[1000]">
+        <span className="text-green-500">NFT</span>PER
       </h1>
     </div>
   );

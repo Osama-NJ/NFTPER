@@ -80,7 +80,9 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" strategy="beforeInteractive" />
       <Script src="https://integrate.depay.com/widgets/v12.js" strategy="beforeInteractive" />
 
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section className="relative py-20 px-4 overflow-hidden"
+      id='pricing'
+      >
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-white bg-clip-text">

@@ -126,7 +126,7 @@ export default function ExtremeBiddingPag() {
                 </Button>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              {/* <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -136,7 +136,7 @@ export default function ExtremeBiddingPag() {
                   ))}
                 </div>
                 <p>Join 1000+ traders using NFTPER</p>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative lg:block">

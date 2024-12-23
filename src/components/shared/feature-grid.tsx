@@ -7,7 +7,7 @@ interface FeatureGridProps {
 
 export function FeatureGrid({ features }: FeatureGridProps) {
   return (
-    <div className="py-24 ">
+    <div className="py-24" id="features">
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="text-4xl font-bold text-center mb-3 text-white leading-tight">
           NFTPER offers bots that can do a variety of automated tasks for you
