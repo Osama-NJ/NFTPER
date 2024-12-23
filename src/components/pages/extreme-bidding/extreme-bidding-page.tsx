@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"
 import { FAQ } from '@/components/ui/faq'
+import NFTBotIllustration from '@/components/ui/nft'
 export default function ExtremeBiddingPag() {
 
   const biddingfaq = [
@@ -143,8 +144,8 @@ export default function ExtremeBiddingPag() {
                 <div className="absolute inset-0 bg-grid-white/5" />
                 <div className="relative z-10 ">
                   {/* Add your NFT preview or bot interface mockup here */}
-                  <Image src={img} alt={''} />
-
+                  {/* <Image src={img} alt={''} /> */}
+                  <NFTBotIllustration/>
                   <div className="w-full h-full rounded-lg bg-background/40 backdrop-blur-md border border-emerald-500/20 t flex items-center justify-center" />
                 </div>
               </div>
