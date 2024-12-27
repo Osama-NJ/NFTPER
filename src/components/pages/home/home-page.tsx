@@ -11,21 +11,21 @@ const features = [
     icon: Bot,
     title: 'Bidding Bot',
     description: 'Automated NFT bidding with smart price detection',
-    color: 'from-blue-500/20 to-blue-600/20 hover:from-blue-500/30 hover:to-blue-600/30',
+    color: 'from-[#74370C] to-orange-600 hover:from-[#E26B15] hover:to-[#ba5913]',
   },
   {
     path: '/listing',
     icon: ListChecks,
     title: 'Listing Bot',
     description: 'List your NFTs across multiple marketplaces',
-    color: 'from-green-500/20 to-green-600/20 hover:from-green-500/30 hover:to-green-600/30',
+    color: 'from-blue-500/20 to-blue-600/20 hover:from-blue-500/30 hover:to-blue-600/30',
   },
   {
     path: '/extremebidding',
     icon: Zap,
     title: 'Extreme Bidding',
     description: 'Advanced features for professional traders',
-    color: 'from-yellow-500/30  hover:from-yellow-500 ',
+    color: 'from-green-500/20 to-green-600/20 hover:from-green-500/30 hover:to-green-600/30',
   },
 ];
 

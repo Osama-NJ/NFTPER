@@ -23,10 +23,10 @@ export function FAQ({ title, faqs, className = '' }: FAQProps) {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-700 ">
-              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-green-400 transition-colors">
+              <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-[#ba5913] transition-colors">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-400  motion-preset-fade motion-duration-1000 ">
+              <AccordionContent className="text-gray-400 motion-preset-fade motion-duration-1000 ">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

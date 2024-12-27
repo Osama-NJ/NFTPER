@@ -3,15 +3,12 @@
 import { useState } from 'react'
 import { cn } from "@/lib/utils"
 import { ArrowLeft, MessageSquare, Twitter, FileText, User } from 'lucide-react'
-import { useStore } from '@/app/hooks/path'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Separator } from '../ui/separator'
 
 export default function TabbedNav2() {
   const [activeTab, setActiveTab] = useState<'bidding' | 'listing' | 'extreme'>('bidding')
-  const Ishome = useStore((state) => state.ishome)
-  const setIshome = useStore((state)=> state.setIshome)
   const pathname = usePathname();  // Gets the current path
 
   if (pathname === "/") return null;  // Don't render the nav if on home page

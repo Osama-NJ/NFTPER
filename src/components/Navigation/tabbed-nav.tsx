@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="w-full max-w-[1150px] mx-auto z-40 fixed">
+      <div className="w-full max-w-[1150px] mx-auto z-50 fixed ">
         <div className="lg:hidden">
           <MobileNav />
         </div>
@@ -41,7 +41,7 @@ export default function Navbar() {
                 <Link
                   className={cn(
                     "px-3 py-1 rounded-md text-sm font-medium relative transition-all duration-200 ease-in-out",
-                    pathname === '/bidding' ? "bg-emerald-500 text-white scale-105" : "text-zinc-400 hover:text-white"
+                    pathname === '/bidding' ? "bg-[#ba5913] text-white scale-105" : "text-zinc-400 hover:text-white"
                   )} href={'/bidding'}>
                   Bidding
                 </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
                 <Link
                   className={cn(
                     "px-3 py-1 rounded-md text-sm font-medium relative transition-all duration-200 ease-in-out",
-                    pathname === '/listing' ? "bg-emerald-500 text-white scale-105" : "text-zinc-400 hover:text-white"
+                    pathname === '/listing' ? "bg-blue-700 text-white scale-105" : "text-zinc-400 hover:text-white"
                   )} href={"/listing"}>
                   Listing
                 </Link>

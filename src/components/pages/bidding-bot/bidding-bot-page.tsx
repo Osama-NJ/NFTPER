@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"
 import { FAQ } from '@/components/ui/faq'
+import NFTBiddingIllustration from '@/components/Illustration/extreeme-illustration'
 export function BiddingBotPage() {
   const pathname = usePathname()
   const setIshome = useStore((state) => state.setIshome)
@@ -26,8 +27,6 @@ export function BiddingBotPage() {
       name:"Remove Prefix",
       description : "Remove NFTPER prefix from your username",
       price : "Ξ0.05"
-
-    
     },
     {
       id :"1",
@@ -93,24 +92,24 @@ export function BiddingBotPage() {
   const biddingfaq = [
     {question:"What does NFTPER offer? ", answer:"We are a new service provider, and we offer autonomous bots that can send offers on NFTs for you. "},
     {question:"Who is the NFTPER team?", answer: (
-        <>I'm <a href='https://alporat.com/' className='hover:underline hover:text-green-400'>alporat</a>, and I'm currently the sole developer and creator of NFTPER.</>
+        <>I'm <a href='https://alporat.com/' className='hover:underline hover:text-[#ba5913]'>alporat</a>, and I'm currently the sole developer and creator of NFTPER.</>
     )},
     {question:"Will there be Founder NFTs in the future ?", answer:"We plan to launch Lifetime Access NFTs on OpenSea in the near future."},
     {question:"Do you have an affiliate program ?", answer:"Contact us via Discord to join our affiliate program, where you can get a cut from your referrals' first month subscription."},
     {question:"There is a bug, what should I do ? ", answer: (
-      <>Contact us via  <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-green-400'>Discord</a>, to join our affiliate program, where you can get a cut from your referrals' first month subscription..</>
+      <>Contact us via <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-[#ba5913]'>Discord</a>, to join our affiliate program, where you can get a cut from your referrals' first month subscription..</>
   )}, 
 
 
     {question:"I have more questions.",answer: (
-      <>You can join our <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-green-400'>Discord</a>, and ask them there, or you can email us directly at <a href='mailto:contact@nftper.com' className='hover:underline hover:text-green-400'>contact@nftper.com</a>.</>
+      <>You can join our <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-[#ba5913]'>Discord</a>, and ask them there, or you can email us directly at <a href='mailto:contact@nftper.com' className='hover:underline hover:text-[#ba5913]'>contact@nftper.com</a>.</>
   )},
 
   ]
 
   return (
     <PageContainer title={''} description={''}>
-      <section className="relative py-20 px-4 min-h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/80">
+      <section className="relative py-20 px-4 min-h-[85vh] flex items-center justify-center overflow-hidden ">
         {/* Animated background elements */}
         <div className="absolute inset-0 w-full h-full">
         </div>
@@ -118,27 +117,23 @@ export function BiddingBotPage() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left space-y-8">
-              <div className="inline-block px-4 py-2 bg-emerald-500/10 rounded-full relative ">
-
-                <div className="flex items-center gap-2 text-emerald-500 ">
+              <div className="inline-block px-4 py-2 bg-[#ba5913]/10 rounded-full relative ">
+                <div className="flex items-center gap-2 text-[#ba5913] ">
                   <Bot className="w-4 h-4" />
-
                   <span className="text-sm font-medium">
-
-                    Automated NFT Bidding</span>
+                    Automated NFT Bidding
+                  </span>
                 </div>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Maximize Your NFT Game with{' '}
-                
                 <span className="relative">
-                  <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#ba5913] to-[#ba5913] bg-clip-text text-transparent">
                     NFTPER
                   </span>
                 </span>
                 {' '}Bidding Bot
-                
               </h1>
 
               <p className="text-xl text-muted-foreground max-w-2xl">
@@ -147,15 +142,13 @@ export function BiddingBotPage() {
 
               <div className="flex flex-wrap gap-4 items-center">
                 <a href='#pricing'>
-
-                <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white">
-                  Get Started
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-
+                  <Button size="lg" className="bg-[#ba5913] hover:bg-[#ba5913]/90 text-white">
+                    Get Started
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
                 </a>
 
-                <Button size="lg" variant="outline" className="border-emerald-500/20 hover:bg-emerald-500/10">
+                <Button size="lg" variant="outline" className="border-[#ba5913]/20 hover:bg-[#ba5913]/10">
                   Watch Demo
                 </Button>
               </div>
@@ -174,15 +167,12 @@ export function BiddingBotPage() {
             </div>
 
             <div className="relative lg:block">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-transparent backdrop-blur-sm">
-                <div className="absolute inset-0 bg-grid-white/5" />
+
                 <div className="relative z-10 ">
                   {/* Add your NFT preview or bot interface mockup here */}
-                  <Image src={img} alt={''} />
+                  <NFTBiddingIllustration frameNumbers={[1,2,3]} />
 
-                  <div className="w-full h-full rounded-lg bg-background/40 backdrop-blur-md border border-emerald-500/20 t flex items-center justify-center" />
                 </div>
-              </div>
             </div>
           </div>
         </div>

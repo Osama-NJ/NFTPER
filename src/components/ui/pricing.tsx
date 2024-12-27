@@ -99,7 +99,7 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                 key={plan.name}
                 className={`relative group rounded-2xl backdrop-blur-sm ${
                   plan.popular 
-                    ? 'bg-gradient-to-b from-green-500/10 to-green-900/10 border border-green-500/20' 
+                    ? 'bg-gradient-to-b from-[#ba5913]/10 to-[#ba5913]/10 border border-[#ba5913]/20' 
                     : 'bg-gray-800/50 border border-gray-700/50'
                 }`}
                 initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
               >
                 {plan.popular && (
                   <div className="absolute -top-5 left-0 right-0 flex justify-center">
-                    <span className="bg-green-500 text-white text-sm font-medium px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                    <span className="bg-[#ba5913] text-white text-sm font-medium px-4 py-1.5 rounded-full flex items-center gap-1.5">
                       <Sparkles className="w-4 h-4" />
                       Most Popular
                     </span>
@@ -118,7 +118,7 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-4 text-white">{plan.name}</h3>
                   <div className="mb-6 h-[80px] flex items-end">
-                    <span className={`font-bold bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent ${plan.name === 'Ultra Access' || pathname === "/listing" ? 'text-3xl' : 'text-5xl'}`}>
+                    <span className={`font-bold bg-gradient-to-r from-[#ba5913] to-[#ba5913] bg-clip-text text-transparent ${plan.name === 'Ultra Access' || pathname === "/listing" ? 'text-3xl' : 'text-5xl'}`}>
                       {plan.price}
                     </span>
                   </div>
@@ -127,7 +127,7 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                   disabled = {pathname === "/listing" || pathname === "/extremebidding" }
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-green-500 hover:bg-green-600 text-white'
+                        ? 'bg-[#ba5913] hover:bg-[#ba5913]/90 text-white'
                         : 'bg-gray-700 hover:bg-gray-600 text-white'
                     } transition-all duration-200 group-hover:scale-105`}
                     onClick={() => handlePlanPurchase(plan.price)}
@@ -142,8 +142,8 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                     {plan.features.map((feature: { included: boolean; name: string }, featureIndex: number) => (
                       <li key={featureIndex} className="flex items-center gap-3">
                         {feature.included ? (
-                          <div className="rounded-full p-1 bg-green-500/10">
-                            <Check className="h-4 w-4 text-green-500" />
+                          <div className="rounded-full p-1 bg-[#ba5913]/10">
+                            <Check className="h-4 w-4 text-[#ba5913]" />
                           </div>
                         ) : (
                           <div className="rounded-full p-1 bg-gray-700/50">
@@ -195,13 +195,13 @@ export default function Pricing({ plans, addons, buttonText }: PricingProps) {
                           <p className="text-gray-400">{addon.description}</p>
                         </div>
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                          <span className="text-2xl font-bold text-green-500">
+                          <span className="text-2xl font-bold text-[#ba5913]">
                             {typeof addon.price === 'number' ? addon.price.toFixed(3) : addon.price}
                           </span>
                           {pathname !== "/listing" && (
                             <Button 
                               variant="outline"
-                              className={`w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white border-green-600`}
+                              className={`w-full sm:w-auto bg-[#ba5913] hover:bg-[#ba5913]/90 text-white border-[#ba5913]`}
                               onClick={() => handleAddonPurchase(addon.price)}
                             >
                               PURCHASE

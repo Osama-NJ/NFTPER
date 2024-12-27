@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className="min-h-screen bg-zinc-900 text-white flex flex-col items-center  ">
+      <body className="min-h-screen  text-white flex flex-col items-center  bg-zinc-900 ">
 
         <Nav/>
         <main className="max-w-6xl mx-auto px-4 py-8 ">

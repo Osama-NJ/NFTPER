@@ -47,7 +47,7 @@ export function MobileNav() {
         </button>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-zinc-900 bg-opacity-95">
+        <div className="fixed inset-0  bg-zinc-900 bg-opacity-95">
           <div className="flex flex-col h-full p-4">
             <div className="flex justify-between items-center mb-8">
               <Logo />
