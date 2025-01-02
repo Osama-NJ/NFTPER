@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { useStore } from '@/app/hooks/path'
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import Pricing from '@/components/ui/pricing'
+import Pricing from '@/components/ui/pricing-card'
 import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"

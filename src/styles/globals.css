@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.blur {
+.Blur {
     -webkit-backdrop-filter: blur(10px);
-  
+    backdrop-filter: blur(10px)
 }

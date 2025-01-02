@@ -36,7 +36,7 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden">
-      <div className="flex items-center justify-between px-4 py-2">
+      <div className="flex items-center justify-between px-4 py-4 bg-zinc-900/70">
         <Logo />
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -47,8 +47,8 @@ export function MobileNav() {
         </button>
       </div>
       {isOpen && (
-        <div className="fixed inset-0  bg-zinc-900 bg-opacity-95">
-          <div className="flex flex-col h-full p-4">
+        <div className="fixed inset-0 bg-zinc-900/80">
+          <div className="flex flex-col h-full p-4 bg-zinc-900/90">
             <div className="flex justify-between items-center mb-8">
               <Logo />
               <button
@@ -61,7 +61,7 @@ export function MobileNav() {
             </div>
             
             {/* Main Routes */}
-            <nav className="space-y-2">
+            <nav className="space-y-2 Blur z-50">
               {routeItems.map((item) => (
                 <Link
                   key={item.name}

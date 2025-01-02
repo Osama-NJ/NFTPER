@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <MobileNav />
         </div>
-        <div className="hidden lg:flex items-center justify-between px-4 py-8  rounded-lg motion-preset-pop motion-duration-500 ">
+        <div className="hidden lg:flex items-center justify-between px-4 py-2  rounded-lg motion-preset-pop motion-duration-500 bg-zinc-900/70 ">
           {/* Logo on the left */}
           <div className="flex items-center justify-center p-3">
             <Logo />

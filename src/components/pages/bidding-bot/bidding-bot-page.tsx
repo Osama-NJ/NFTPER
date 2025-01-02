@@ -7,12 +7,21 @@ import { usePathname } from 'next/navigation'
 import { useStore } from '@/app/hooks/path'
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import Pricing from '@/components/ui/pricing'
+import {PricingCard} from '@/components/ui/pricing-card'
 import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"
 import { FAQ } from '@/components/ui/faq'
 import NFTBiddingIllustration from '@/components/Illustration/extreeme-illustration'
+import { Standedardbiddingpricing, Probiddingpricing, Extremebiddingpricing  } from '@/components/pricing'
+
+
+
+
+
+
+
+
 export function BiddingBotPage() {
   const pathname = usePathname()
   const setIshome = useStore((state) => state.setIshome)
@@ -88,7 +97,7 @@ export function BiddingBotPage() {
       ],
     },
   ]
-  
+
   const biddingfaq = [
     {question:"What does NFTPER offer? ", answer:"We are a new service provider, and we offer autonomous bots that can send offers on NFTs for you. "},
     {question:"Who is the NFTPER team?", answer: (
@@ -114,7 +123,7 @@ export function BiddingBotPage() {
         <div className="absolute inset-0 w-full h-full">
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto ">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left space-y-8">
               <div className="inline-block px-4 py-2 bg-[#ba5913]/10 rounded-full relative ">
@@ -192,7 +201,14 @@ export function BiddingBotPage() {
       `}</style>
 
       <FeatureGrid features={biddingBotFeatures} />
-      <Pricing plans={biddingplans} addons={addonsplans} buttonText={'PURCHASE'} />
+      {/* <PricingCard   {...basicPlan}  variant='bidding' textcolor='text-[#ba5913]' /> */}
+      <div id='pricing' className="text-center mb-16"><h2 className="text-4xl font-bold mb-4 text-white bg-clip-text">Choose Your Plan</h2><p className="text-xl mb-8 text-gray-400">Unlock the power of automated NFT bidding</p></div>
+
+      <div className='flex xl:flex-row flex-col w-full  gap-4 px-4 md:px-6' >
+        <Standedardbiddingpricing/>
+        <Probiddingpricing />
+        <Extremebiddingpricing/>
+      </div>
       <FAQ title={''} faqs={biddingfaq}/>
     </PageContainer>
   )

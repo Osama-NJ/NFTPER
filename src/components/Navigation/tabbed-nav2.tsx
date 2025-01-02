@@ -6,10 +6,19 @@ import { ArrowLeft, MessageSquare, Twitter, FileText, User } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Separator } from '../ui/separator'
+import { useRef } from "react";
 
 export default function TabbedNav2() {
   const [activeTab, setActiveTab] = useState<'bidding' | 'listing' | 'extreme'>('bidding')
   const pathname = usePathname();  // Gets the current path
+
+  const SIZE = 5;
+  const list = new Array(SIZE).fill(0);
+    const sectionRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
 
   if (pathname === "/") return null;  // Don't render the nav if on home page
 
@@ -32,9 +41,9 @@ export default function TabbedNav2() {
             className={cn(
               "px-4 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out",
               activeTab === 'bidding'
-                ? "bg-zinc-800 text-white scale-105"
-                : "text-zinc-400 hover:text-white hover:bg-zinc-800"
-            )} href={'#features'}          >
+                ? " text-white scale-105"
+                : "text-zinc-400 hover:text-white"
+            )} href={'#features'}    scroll={false}      >
             Features
           </Link>
           <Link
@@ -44,7 +53,7 @@ export default function TabbedNav2() {
               activeTab === 'listing'
                 ? "bg-zinc-800 text-white scale-105"
                 : "text-zinc-400 hover:text-white "
-            )}href={"#pricing"}
+            )}href={"#pricing"} scroll={false} 
           >
             Pricing
           </Link>
@@ -55,7 +64,7 @@ export default function TabbedNav2() {
               activeTab === 'extreme'
                 ? "bg-zinc-800 text-white scale-105"
                 : "text-zinc-400 hover:text-white "
-            )}href={"#faq"}
+            )}href={"#faq"} scroll={false} 
           >
             Faq
           </Link>
