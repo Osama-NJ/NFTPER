@@ -39,33 +39,22 @@ export default function TabbedNav2() {
           <Link
             onClick={() => { setActiveTab('bidding'); scrollToSection('features'); }}
             className={cn(
-              "px-4 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out",
-              activeTab === 'bidding'
-                ? " text-white scale-105"
-                : "text-zinc-400 hover:text-white"
-            )} href={'#features'}    scroll={false}      >
+              "px-4 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out text-zinc-400 hover:text-white",
+            )} href={'#features'} scroll={false}>
             Features
           </Link>
           <Link
             onClick={() => { setActiveTab('listing'); scrollToSection('pricing'); }}
             className={cn(
-              "px-3 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out",
-              activeTab === 'listing'
-                ? "bg-zinc-800 text-white scale-105"
-                : "text-zinc-400 hover:text-white "
-            )}href={"#pricing"} scroll={false} 
-          >
+              "px-3 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out text-zinc-400 hover:text-white",
+            )} href={"#pricing"} scroll={false}>
             Pricing
           </Link>
           <Link
             onClick={() => { setActiveTab('extreme'); scrollToSection('faq'); }}
             className={cn(
-              "px-3 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out",
-              activeTab === 'extreme'
-                ? "bg-zinc-800 text-white scale-105"
-                : "text-zinc-400 hover:text-white "
-            )}href={"#faq"} scroll={false} 
-          >
+              "px-3 py-3 rounded-full text-sm font-medium relative transition-all duration-200 ease-in-out text-zinc-400 hover:text-white",
+            )} href={"#faq"} scroll={false}>
             Faq
           </Link>
         </div>

@@ -7,12 +7,12 @@ import { usePathname } from 'next/navigation'
 import { useStore } from '@/app/hooks/path'
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import Pricing from '@/components/ui/pricing-card'
 import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"
 import { FAQ } from '@/components/ui/faq'
-import NFTBotIllustration from '@/components/ui/nft'
+import NFTBiddingIllustration from '@/components/Illustration/extreeme-illustration'
+import { StandardextremePricing, ProdextremePricing, UltradextremePricing } from '@/components/pricing'
 export default function ExtremeBiddingPag() {
 
   const biddingfaq = [
@@ -140,15 +140,14 @@ export default function ExtremeBiddingPag() {
             </div>
 
             <div className="relative lg:block">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-transparent backdrop-blur-sm">
-                <div className="absolute inset-0 bg-grid-white/5" />
-                <div className="relative z-10 ">
-                  {/* Add your NFT preview or bot interface mockup here */}
-                  {/* <Image src={img} alt={''} /> */}
-                  <NFTBotIllustration/>
-                  <div className="w-full h-full rounded-lg bg-background/40 backdrop-blur-md border border-emerald-500/20 t flex items-center justify-center" />
-                </div>
-              </div>
+                <div className="relative lg:block">
+
+<div className="relative z-10 ">
+  {/* Add your NFT preview or bot interface mockup here */}
+  <NFTBiddingIllustration frameNumbers={[1,2,3]} />
+
+</div>
+</div>
             </div>
           </div>
         </div>
@@ -168,7 +167,14 @@ export default function ExtremeBiddingPag() {
       `}</style>
 
       <FeatureGrid features={extremeBiddingFeatures} />
-      <Pricing plans={extremeplans} addons={addonsplans} buttonText={'PURCHASE'} />
+
+      <div id='pricing' className="text-center mb-16"><h2 className="text-4xl font-bold mb-4 text-white bg-clip-text">Choose Your Plan</h2><p className="text-xl mb-8 text-emerald-500">Unlock the power of automated NFT bidding</p></div>
+
+      <div className='flex xl:flex-row flex-col w-full  gap-4 px-4 md:px-6' >
+        <StandardextremePricing/>
+        <ProdextremePricing/>
+        <UltradextremePricing/>
+      </div>
       <FAQ title={''} faqs={biddingfaq}/>
     </PageContainer>
   )

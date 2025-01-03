@@ -44,9 +44,10 @@ export interface PricingCardProps
   list: string[]
   discount?: number
   listHeading?: string
-  textcolor?:string
-  buttonColor?:string,
-  comingsoontext?:string,    
+  textcolor?: string
+  buttonColor?: string
+  comingsoontext?: string
+  disabled?: boolean
   onButtonClick?: () => void
 }
 
@@ -67,6 +68,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
     buttonColor,
     onButtonClick,
     comingsoontext,
+    disabled,
     ...props 
   }, ref) => {
     const withDiscount = React.useMemo(() => {
@@ -91,7 +93,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
 
           <div>
             <div className="mb-3 flex space-x-2 xl:mb-4">
-              <span className={`text-3xl font-extrabold ${textcolor} lg:text-5xl  ${comingsoontext}`}>
+              <span className={`text-3xl font-extrabold ${textcolor} lg:text-4xl  ${comingsoontext}`}>
               {discount ? withDiscount : price}
               </span>
               {discount && (
@@ -109,7 +111,8 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
 
             <Button
               onClick={onButtonClick}
-              className={`w-full  ${buttonColor}`}
+              className={`w-full ${buttonColor}`}
+              disabled={disabled}
             >
               {buttonText}
             </Button>

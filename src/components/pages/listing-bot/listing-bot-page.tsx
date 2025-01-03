@@ -7,29 +7,52 @@ import { usePathname } from 'next/navigation'
 import { useStore } from '@/app/hooks/path'
 import { useEffect } from 'react'
 import { Button } from '@/components/ui/button'
-import Pricing from '@/components/ui/pricing-card'
 import Image from 'next/image'
 import { ArrowRight, Bot, Sparkles } from 'lucide-react'
 import img from "@/images/nft.png"
 import { FAQ } from '@/components/ui/faq'
+import { ExtremeListingPricing, ProListingPricing, StandardListingPricing } from '@/components/pricing'
+import NFTBiddingIllustration from '@/components/Illustration/extreeme-illustration'
 export function ListingBotPage() {
+  const pathname = usePathname()
+
+  const hoverColor = pathname === '/bidding'
+    ? 'hover:text-[#ba5913]'
+    : pathname === '/listing'
+    ? 'hover:text-blue-700'
+    : '';
 
   const biddingfaq = [
-    {question:"What does NFTPER offer? ", answer:"We are a new service provider, and we offer autonomous bots that can send offers on NFTs for you. "},
-    {question:"Who is the NFTPER team?", answer: (
-        <>I'm <a href='https://alporat.com/' className='hover:underline hover:text-green-400'>alporat</a>, and I'm currently the sole developer and creator of NFTPER.</>
-    )},
-    {question:"Will there be Founder NFTs in the future ?", answer:"We plan to launch Lifetime Access NFTs on OpenSea in the near future."},
-    {question:"Do you have an affiliate program ?", answer:"Contact us via Discord to join our affiliate program, where you can get a cut from your referrals' first month subscription."},
-    {question:"There is a bug, what should I do ? ", answer: (
-      <>Contact us via  <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-green-400'>Discord</a>, to join our affiliate program, where you can get a cut from your referrals' first month subscription..</>
-  )}, 
-
-
-    {question:"I have more questions.",answer: (
-      <>You can join our <a href='https://discord.gg/hsa6VKbjzw' className='hover:underline hover:text-green-400'>Discord</a>, and ask them there, or you can email us directly at <a href='mailto:contact@nftper.com' className='hover:underline hover:text-green-400'>contact@nftper.com</a>.</>
-  )},
-
+    {
+      question: "What does NFTPER offer? ",
+      answer: "We are a new service provider, and we offer autonomous bots that can send offers on NFTs for you. "
+    },
+    {
+      question: "Who is the NFTPER team?",
+      answer: (
+        <>I'm <a href='https://alporat.com/' className={`hover:underline ${hoverColor}`}>alporat</a>, and I'm currently the sole developer and creator of NFTPER.</>
+      )
+    },
+    {
+      question: "Will there be Founder NFTs in the future ?",
+      answer: "We plan to launch Lifetime Access NFTs on OpenSea in the near future."
+    },
+    {
+      question: "Do you have an affiliate program ?",
+      answer: "Contact us via Discord to join our affiliate program, where you can get a cut from your referrals' first month subscription."
+    },
+    {
+      question: "There is a bug, what should I do ? ",
+      answer: (
+        <>Contact us via <a href='https://discord.gg/hsa6VKbjzw' className={`hover:underline ${hoverColor}`}>Discord</a>, to join our affiliate program, where you can get a cut from your referrals' first month subscription.</>
+      )
+    },
+    {
+      question: "I have more questions.",
+      answer: (
+        <>You can join our <a href='https://discord.gg/hsa6VKbjzw' className={`hover:underline ${hoverColor}`}>Discord</a>, and ask them there, or you can email us directly at <a href='mailto:contact@nftper.com' className={`hover:underline ${hoverColor}`}>contact@nftper.com</a>.</>
+      )
+    },
   ]
   const listingaddons = [ 
       {
@@ -74,9 +97,9 @@ export function ListingBotPage() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left space-y-8">
-              <div className="inline-block px-4 py-2 bg-emerald-500/10 rounded-full relative ">
+              <div className="inline-block px-4 py-2 bg-blue-500/10 rounded-full relative ">
 
-                <div className="flex items-center gap-2 text-emerald-500 ">
+                <div className="flex items-center gap-2 text-blue-600 ">
                   <Bot className="w-4 h-4" />
 
                   <span className="text-sm font-medium">
@@ -90,7 +113,7 @@ export function ListingBotPage() {
               {' '}
                 
                 <span className="relative">
-                  <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
                   Listing Bot
                   </span>
                 </span>
@@ -103,11 +126,11 @@ export function ListingBotPage() {
               </p>
 
               <div className="flex flex-wrap gap-4 items-center">
-                <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white">
+                <Button size="lg" className="bg-blue-700 hover:bg-blue-600 text-white">
                   Get Started
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-emerald-500/20 hover:bg-emerald-500/10">
+                <Button size="lg" variant="outline" className="border-blue-500/20 hover:bg-blue-500/10">
                   Watch Demo
                 </Button>
               </div>
@@ -124,18 +147,15 @@ export function ListingBotPage() {
                 <p>Join 1000+ traders using NFTPER</p>
               </div> */}
             </div>
-
             <div className="relative lg:block">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-transparent backdrop-blur-sm">
-                <div className="absolute inset-0 bg-grid-white/5" />
+
                 <div className="relative z-10 ">
                   {/* Add your NFT preview or bot interface mockup here */}
-                  <Image src={img} alt={''} />
+                  <NFTBiddingIllustration frameNumbers={[1,2,3]} />
 
-                  <div className="w-full h-full rounded-lg bg-background/40 backdrop-blur-md border border-emerald-500/20 t flex items-center justify-center" />
                 </div>
-              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -154,7 +174,13 @@ export function ListingBotPage() {
       `}</style>
 
       <FeatureGrid features={listingBotFeatures} />
-      <Pricing plans={listingplans} addons={listingaddons} buttonText={'COMING SOON'} />
+      <div id='pricing' className="text-center mb-16"><h2 className="text-4xl font-bold mb-4 text-white bg-clip-text">Choose Your Plan</h2><p className="text-xl mb-8 text-blue-700">Unlock the power of automated NFT bidding</p></div>
+
+      <div className='flex xl:flex-row flex-col w-full  gap-4 px-4 md:px-6' >
+        <ExtremeListingPricing/>
+        <ProListingPricing/>
+        <ExtremeListingPricing/>
+      </div>
       <FAQ title={''} faqs={biddingfaq}/>
     </PageContainer>
   )

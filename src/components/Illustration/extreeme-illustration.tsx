@@ -3,7 +3,17 @@ import React from 'react'
 import nft1 from "@/images/nft1.jpg"
 import nft2 from "@/images/nft2.jpg"
 import nft3 from "@/images/nft3.jpg"
+import { usePathname } from 'next/navigation'
 const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNumbers }) => {
+
+  const pathname = usePathname()
+
+  const accentColor = pathname === '/bidding'
+    ? '#ba5913'
+    : pathname === '/listing'
+    ? '#1d4ed8' // blue-700 equivalent in hex
+    : '#22c55e'; // green-500 equivalent in hex
+
   return (
     <div className="w-full max-w-3xl mx-auto relative ">
       <svg
@@ -29,7 +39,7 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
             <circle cx="400" cy="300" r="250" />
           </clipPath>
           <linearGradient id="circle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ba5913" stopOpacity="0.6" />
+            <stop offset="0%" stopColor={accentColor} stopOpacity="0.6" />
             <stop offset="100%" stopColor="#0f3460" stopOpacity="0.6" />
           </linearGradient>
         </defs>
@@ -39,7 +49,7 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
         <g filter="url(#glow)">
           <circle cx="400" cy="300" r="250" fill="url(#circle-gradient)" opacity="0.1" />
           <circle cx="400" cy="300" r="250" fill="none" stroke="url(#circle-gradient)" strokeWidth="4" />
-          <circle cx="400" cy="300" r="240" fill="none" stroke="#ba5913" strokeWidth="1" opacity="0.5" strokeDasharray="20 10" />
+          <circle cx="400" cy="300" r="240" fill="none" stroke={accentColor} strokeWidth="1" opacity="0.5" strokeDasharray="20 10" />
           <circle cx="400" cy="300" r="260" fill="none" stroke="#0f3460" strokeWidth="1" opacity="0.5" strokeDasharray="10 15" />
         </g>
 
@@ -110,7 +120,7 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
           <path
             d="M390 500 L400 480 L410 500 L400 510 Z"
             fill="#16213e"
-            stroke="#ba5913"
+            stroke={accentColor}
             strokeWidth="2"
           >
             <animateTransform
@@ -124,7 +134,7 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
           <path
             d="M390 495 L400 505 L410 495"
             fill="none"
-            stroke="#ba5913"
+            stroke={accentColor}
             strokeWidth="2"
           >
             <animateTransform
@@ -138,58 +148,9 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
         </g>
 
         {/* Flying Cryptocurrency Icons */}
-        <g clipPath="url(#circle-clip)">
-          {[
-            { cx: 400, cy: 300, r: 200, startAngle: 0, delay: 0, type: 'eth' },
-            { cx: 400, cy: 300, r: 180, startAngle: 500, delay: 0.5, type: 'polygon' },
-            { cx: 400, cy: 300, r: 220, startAngle: 1000, delay: 1, type: 'eth' },
-            { cx: 400, cy: 300, r: 190, startAngle: 1200, delay: 1.5, type: 'polygon' },
-          ].map((coin, index) => (
-            <g key={index} opacity="0">
-              <animateMotion
-                path={`M ${coin.cx + coin.r * Math.cos(coin.startAngle * Math.PI / 180)} ${coin.cy + coin.r * Math.sin(coin.startAngle * Math.PI / 180)} A ${coin.r} ${coin.r} 0 1 1 ${coin.cx + coin.r * Math.cos((coin.startAngle + 359) * Math.PI / 180)} ${coin.cy + coin.r * Math.sin((coin.startAngle + 359) * Math.PI / 180)}`}
-                dur="15s"
-                repeatCount="indefinite"
-                begin={`${coin.delay}s`}
-              />
-              <animate
-                attributeName="opacity"
-                values="0;1;1;0"
-                keyTimes="0;0.1;0.9;1"
-                dur="15s"
-                repeatCount="indefinite"
-                begin={`${coin.delay}s`}
-              />
-              <circle r="20" fill={coin.type === 'eth' ? '#627EEA' : '#8247E5'} />
-              {coin.type === 'eth' ? (
-                <>
-                  <path
-                    d="M-8 0 L0 -12 L8 0 L0 8 Z"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M-8 4 L0 12 L8 4"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                  />
-                </>
-              ) : (
-                <path
-                  d="M0 -12 L10 0 L0 12 L-10 0 Z"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2"
-                />
-              )}
-            </g>
-          ))}
-        </g>
 
         {/* Animated Pulse Effect */}
-        <circle cx="400" cy="300" r="250" fill="none" stroke="#ba5913" strokeWidth="2" opacity="0.5">
+        <circle cx="400" cy="300" r="250" fill="none" stroke={accentColor} strokeWidth="2" opacity="0.5">
           <animate
             attributeName="r"
             values="250;270;250"
@@ -215,7 +176,7 @@ const NFTBiddingIllustration: React.FC<{ frameNumbers: number[] }> = ({ frameNum
               cx={x}
               cy={y}
               r="2"
-              fill="#ba5913"
+              fill={accentColor}
               opacity="0.5"
             >
               <animate
